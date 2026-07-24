@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="uz">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UzChat – O'zbek Tanishuv Chati</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    </head>
+    <body>
+        <!-- Gradient fon -->
+        <div class="bg-gradient"></div>
+
+        <!-- Asosiy konteyner -->
+        <div class="container">
+            <header class="glass header">
+                <h1 class="logo">UzChat</h1>
+                <div class="online-count">
+                    <i class="fa fa-circle"></i>
+                    <span id="onlineUsers">0</span> ta foydalanuvchi onlayn
+                </div>
+            </header>
+
+            <!-- Nickname oynasi -->
+            <div id="loginBox" class="glass box">
+                <h2>Chatga kirish</h2>
+                <p class="desc">
+                    Taxallusingizni kiriting va suhbatni boshlang
+                </p>
+                <input
+                    type="text"
+                    id="nickname"
+                    placeholder="Masalan: Samandar"
+                    maxlength="20"
+                    required
+                />
+                <button id="joinBtn" class="btn">Kirish</button>
+            </div>
+
+            <!-- Chat oynasi -->
+            <div id="chatBox" class="glass box hidden">
+                <div class="chat-header">
+                    <button id="searchBtn" class="icon-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="search-input hidden"
+                        placeholder="Xabarni qidirish..."
+                    />
+                </div>
+
+                <div id="messages" class="messages"></div>
+
+                <div class="reply-box hidden" id="replyBox">
+                    <span id="replyToName"></span> ga javob:
+                    <button class="icon-btn" id="closeReply">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="input-area">
+                    <button id="emojiBtn" class="icon-btn">
+                        <i class="fa fa-smile-o"></i>
+                    </button>
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Xabar yozish..."
+                        maxlength="500"
+                    />
+                    <button id="sendBtn" class="btn">Yuborish</button>
+                </div>
+                <div class="emoji-picker hidden" id="emojiPicker">
+                    😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚
+                    😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥸 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️
+                    😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 🤫 🤭 🤮 🤢 🤧 😷 🤒 🤕
+                    🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼
+                    😽 🙀 😿 😾 🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼 🐨 🐯 🦁 🐮 🐷 🐸 🐵 🙈
+                    🙉 🙊 🐔 🐧 🐦 🐤 🐣 🐥 🦆 🦅 🦉 🦇 🦈 🐬 🐳 🐋 🐟 🐠 🐡 🦀
+                    🦑 🐙 🐚 🐌 🐛 🐜 🐝 🐞 🦗 🦟 🦠 🐢 🐍 🦎 🦖 🦕 🐊 🐪 🐫 🦙
+                    🦒 🐘 🦏 🦛 🐄 🐃 🐂 🐃 🐄 🐎 🐖 🐏 🐑 🐐 🐓 🦃 🦚 🦜 🦢 🦩
+                    🐕 🐩 🐈 🐈‍⬛ 🐇 🦝 🦨 🦡 🦦 🦥 🐁 🐀 🐀 🐹 🐰 🐻 🐻‍❄️ 🐨 🐯 🦁
+                    🐅 🐆 🐈 🐈‍⬛ 🐕 🐩 🐕‍🦺 🦮 🐾
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastki qism -->
+        <footer>© 2026 UzChat</footer>
+
+        <script src="supabase.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
