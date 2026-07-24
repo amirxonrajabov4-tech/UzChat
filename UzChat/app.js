@@ -240,3 +240,6 @@ window.blockUser = function (nick) {
 
 // Bloklanganlarni yuklash
 blockedUsers = JSON.parse(localStorage.getItem("uzchat_blocked") || "[]");
+console.log("Supabase ishladi!");
+
+console.log(supabase);
